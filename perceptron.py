@@ -10,7 +10,7 @@ class Perceptron(object):
         self.w = w
     
     @staticmethod
-    def step_function(x):
+    def activation_function(x):
         if x<0:
             return 0
         else:
@@ -28,7 +28,7 @@ class Perceptron(object):
               #  print(x,w,self.b)
                 u = sum(x*self.w) + self.b
                # print('u',u)
-                error = y - Perceptron.step_function(u) 
+                error = y - Perceptron.activation_function(u) 
                 errors.append(error) 
                 for index, value in enumerate(x):
                #     print(index,value,x)
